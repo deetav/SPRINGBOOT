@@ -40,7 +40,7 @@ public class UserType {
     public String toString() {
         return "UserType{" +
                 "userTypeID=" + userTypeID +
-                ", userTypeName='" + userTypeName + '\'' +
+                ", userTypeName='" + userTypeName + '\''  +
                 '}';
     }
 }
