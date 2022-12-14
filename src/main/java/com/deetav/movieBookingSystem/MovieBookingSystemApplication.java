@@ -14,8 +14,7 @@ public class MovieBookingSystemApplication {
     public static void main(String[] args) {
         ApplicationContext ctx = SpringApplication.run(MovieBookingSystemApplication.class, args);
         MovieDao movieDao = ctx.getBean(MovieDao.class);
-        System.out.println(movieDao);
-        // i should be able to save the entity
+        // I should be able to save the entity
 
         System.out.println("_______Creating Movie object____");
         Movie movie = new Movie();
@@ -56,13 +55,9 @@ public class MovieBookingSystemApplication {
 
         // I should be able to search for my favourite movie
 
-        Movie searchedMovie = movieDao.findById(2).get();
-
-        System.out.println("searched movie : " + searchedMovie);
         movie.setMovieDescription("updated description");
         movieDao.save(movie);
         System.out.println("Saved object : " + savedObject);
-        movieDao.delete(searchedMovie);
         Movie result = movieDao.findByMovieName("fantastic");
         System.out.println("found movie by name is :"+result);
         System.out.println("Hello Spring Boot !!!");
