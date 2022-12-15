@@ -6,19 +6,23 @@ import jakarta.persistence.*;
 public class Theatre {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int theatreId;
+    private Integer theatreId;
 
-    @Column(length = 20,nullable = false,unique = true)
+    @Column(length = 20, nullable = false, unique = true)
     private String theatreName;
 
-    @Column(length = 20,nullable = false,unique = true)
+    @Column(length = 20, nullable = false, unique = true)
     private float ticketPrice = 150.00f;
 
-    public int getTheatreId() {
+    @ManyToOne
+    @JoinColumn(name = "city_id", nullable = false)
+    private City city;
+
+    public Integer getTheatreId() {
         return theatreId;
     }
 
-    public void setTheatreId(int theatreId) {
+    public void setTheatreId(Integer theatreId) {
         this.theatreId = theatreId;
     }
 

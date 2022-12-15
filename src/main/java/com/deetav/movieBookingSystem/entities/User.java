@@ -4,12 +4,13 @@ import jakarta.persistence.*;
 import org.springframework.cglib.core.Local;
 
 import java.time.LocalDateTime;
+import java.util.Set;
 
 @Entity
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int customerId;
+    private Integer customerId;
     @Column(name = "first_name", length = 20, nullable = false)
     private String firstName;
     @Column(length = 20)
@@ -21,11 +22,13 @@ public class User {
     @Column(nullable = false)
     private LocalDateTime dateOfBirth;
 
-    public int getCustomerId() {
+    // user can have multiple mobile numbers
+
+    public Integer getCustomerId() {
         return customerId;
     }
 
-    public void setCustomerId(int customerId) {
+    public void setCustomerId(Integer customerId) {
         this.customerId = customerId;
     }
 

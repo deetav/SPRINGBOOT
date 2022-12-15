@@ -11,20 +11,20 @@ public class Movie {
     // This annotation will create movieId as the primary key for the Movie_Table table
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int movieId;
+    private Integer movieId;
     private String movieName;
     @Column(name = "movie_desc", length = 500, nullable = false)                                                                
     private String movieDescription;
     private LocalDateTime releaseDate;
-    private int duration;
+    private Integer duration;
     private String coverPhotoUrl;
     private String trailerUrl;
 
-    public int getMovieId() {
+    public Integer getMovieId() {
         return movieId;
     }
 
-    public void setMovieId(int movieId) {
+    public void setMovieId(Integer movieId) {
         this.movieId = movieId;
     }
 
@@ -52,11 +52,11 @@ public class Movie {
         this.releaseDate = releaseDate;
     }
 
-    public int getDuration() {
+    public Integer getDuration() {
         return duration;
     }
 
-    public void setDuration(int duration) {
+    public void setDuration(Integer duration) {
         this.duration = duration;
     }
 

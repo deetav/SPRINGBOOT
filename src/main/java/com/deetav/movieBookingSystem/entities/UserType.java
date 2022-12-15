@@ -7,7 +7,7 @@ import jakarta.persistence.*;
 public class UserType {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int userTypeID;
+    private Integer userTypeID;
 
     @Column(length = 20, unique = true)
     private String userTypeName = "Customer";
@@ -20,11 +20,11 @@ public class UserType {
         this.userTypeName = userTypeName;
     }
 
-    public int getUserTypeID() {
+    public Integer getUserTypeID() {
         return userTypeID;
     }
 
-    public void setUserTypeID(int userTypeID) {
+    public void setUserTypeID(Integer userTypeID) {
         this.userTypeID = userTypeID;
     }
 

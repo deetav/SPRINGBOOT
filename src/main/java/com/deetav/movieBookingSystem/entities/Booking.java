@@ -1,6 +1,5 @@
 package com.deetav.movieBookingSystem.entities;
 
-import io.micrometer.core.annotation.Counted;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
@@ -9,17 +8,17 @@ import java.time.LocalDateTime;
 public class Booking {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int bookingId;
+    private Integer bookingId;
     @Column(nullable = false)
     private LocalDateTime bookingDate;
     @Column(nullable = false)
-    private int numberOfSeats;
+    private Integer numberOfSeats;
 
-    public int getBookingId() {
+    public Integer getBookingId() {
         return bookingId;
     }
 
-    public void setBookingId(int bookingId) {
+    public void setBookingId(Integer bookingId) {
         this.bookingId = bookingId;
     }
 
@@ -31,11 +30,11 @@ public class Booking {
         this.bookingDate = bookingDate;
     }
 
-    public int getNumberOfSeats() {
+    public Integer getNumberOfSeats() {
         return numberOfSeats;
     }
 
-    public void setNumberOfSeats(int numberOfSeats) {
+    public void setNumberOfSeats(Integer numberOfSeats) {
         this.numberOfSeats = numberOfSeats;
     }
 

@@ -7,7 +7,7 @@ public class Status {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int statusId;
+    private Integer statusId;
     @Column(length = 20,nullable = false,unique = true)
     private String statusName;
 
@@ -18,7 +18,7 @@ public class Status {
         this.statusName = statusName;
     }
 
-    public int getStatusId() {
+    public Integer getStatusId() {
         return statusId;
     }
 

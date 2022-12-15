@@ -6,16 +6,16 @@ import jakarta.persistence.*;
 public class Language {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int languageId;
+    private Integer languageId;
 
     @Column(length = 20,nullable = false,unique = true)
     private String languageName;
 
-    public int getLanguageId() {
+    public Integer getLanguageId() {
         return languageId;
     }
 
-    public void setLanguageId(int languageId) {
+    public void setLanguageId(Integer languageId) {
         this.languageId = languageId;
     }
 

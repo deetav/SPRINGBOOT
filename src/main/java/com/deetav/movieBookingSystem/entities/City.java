@@ -2,29 +2,36 @@ package com.deetav.movieBookingSystem.entities;
 
 import jakarta.persistence.*;
 
+import java.util.Set;
+
 @Entity
 public class City {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int cityId;
+    private Integer cityId;
 
     @Column(length = 20, nullable = false)
     private String cityName;
+    @OneToMany(mappedBy = "city", fetch = FetchType.EAGER)
+    private Set<Theatre> theatres;
 
-    public City() {}
-    public City(int cityId,String cityName){
+    public City() {
+    }
+
+    public City(Integer cityId, String cityName) {
         this.cityId = cityId;
         this.cityName = cityName;
     }
-    public City(String cityName){
+
+    public City(String cityName) {
         this.cityName = cityName;
     }
 
-    public int getCityId() {
+    public Integer getCityId() {
         return cityId;
     }
 
-    public void setCityId(int cityId) {
+    public void setCityId(Integer cityId) {
         this.cityId = cityId;
     }
 
